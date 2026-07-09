@@ -35,10 +35,14 @@ jobs:
     - name: Run pytest
       run: python -m pytest
 
-    - name: Run Unit Tests
-      run: |
-        pytest
+    # - name: Run Unit Tests
+    #   run: |
+    #     pytest
 
+    - name: Run pytest
+      env:
+        PYTHONPATH: .
+      run: pytest
 
 
     - name: Run Flake8
