@@ -1,11 +1,9 @@
 name: Python CI Pipeline
 
-
 on:
   push:
     branches:
       - main
-
 
 jobs:
 
@@ -34,12 +32,17 @@ jobs:
       run: |
         pip install -r requirements.txt
 
+    - name: Run pytest
+      run: python -m pytest
 
+    # - name: Run Unit Tests
+    #   run: |
+    #     pytest
 
-    - name: Run Unit Tests
-      run: |
-        pytest
-
+    - name: Run pytest
+      env:
+        PYTHONPATH: .
+      run: pytest
 
 
     - name: Run Flake8
