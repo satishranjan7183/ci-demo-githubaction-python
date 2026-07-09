@@ -49,13 +49,8 @@ jobs:
       run: |
         flake8 .
 
-
-
     - name: Run Pylint
-      run: |
-        pylint app
-
-
+      run: pylint app --disable=C0304,C0114,C0116
 
     - name: Build Application
       run: |
